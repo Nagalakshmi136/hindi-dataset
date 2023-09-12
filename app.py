@@ -23,7 +23,7 @@ with st.form("query"):
             st.session_state.transcript_video_ids = transcript_video_ids
         if st.session_state.get("categories") is None:
             st.session_state.categories = []
-        st.session_state.categories.append([query, len(transcript_video_ids)])
+        st.session_state.categories.append((query, len(transcript_video_ids)))
 
 
 if st.session_state.get("transcript_video_ids") is not None:
@@ -33,5 +33,6 @@ if st.session_state.get("transcript_video_ids") is not None:
         st.video(f"https://www.youtube.com/watch?v={selected_video}")
 if st.session_state.get("categories") is not None:
     df = pd.DataFrame(st.session_state.categories, columns=["query", "no_of_results"])
-    fig = px.pie(df, values="no_of_results", names="query")
+    result_df = df.drop_duplicates(subset=["query"], keep="last")
+    fig = px.pie(result_df, values="no_of_results", names="query")
     st.plotly_chart(fig)
