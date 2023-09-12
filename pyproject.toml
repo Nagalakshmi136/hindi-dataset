@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hindi-dataset"
+version = "0.1.0"
+description = ""
+authors = ["munikumar.mm <munikumar7085@gmail.com>"]
+readme = "README.md"
+packages = [{include = "hindi_dataset"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.26.0"
+google-api-python-client = "^2.98.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
