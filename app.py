@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 import language_videos.fetch_youtube_data as youtube
+import constants as ct
 
 with st.form("query"):
 
@@ -11,26 +12,26 @@ with st.form("query"):
             "submit",
         )
         if is_submit:
-            if st.session_state.get("transcript_video_ids") is not None:
-                del st.session_state.transcript_video_ids
+            if st.session_state.get("videos_id") is not None:
+                del st.session_state.videos_id
             return query
 
     query = get_query()
     if query is not None:
-        video_transcript = youtube.get_video_transcripts(query)
-        transcript_video_ids = video_transcript.keys()
-        if transcript_video_ids not in st.session_state:
-            st.session_state.transcript_video_ids = transcript_video_ids
+        videos_id = youtube.get_valid_videos_id(query)
+        # videos_id = video_transcript.keys()
+        if videos_id not in st.session_state:
+            st.session_state.videos_id = videos_id
         if st.session_state.get("categories") is None:
             st.session_state.categories = []
-        st.session_state.categories.append((query, len(transcript_video_ids)))
+        st.session_state.categories.append((query, len(videos_id)))
 
 
-if st.session_state.get("transcript_video_ids") is not None:
-    videos = st.session_state.transcript_video_ids
+if st.session_state.get("videos_id") is not None:
+    videos = st.session_state.videos_id
     selected_video = st.selectbox(f"search results : {len(videos)}", videos)
     if selected_video is not None:
-        st.video(f"https://www.youtube.com/watch?v={selected_video}")
+        st.video(f"{ct.BASE_URL}{selected_video}")
 if st.session_state.get("categories") is not None:
     df = pd.DataFrame(st.session_state.categories, columns=["query", "no_of_results"])
     result_df = df.drop_duplicates(subset=["query"], keep="last")
