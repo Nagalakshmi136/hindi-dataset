@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "hindi_dataset"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 streamlit = "^1.26.0"
 google-api-python-client = "^2.98.0"
 moviepy = "^1.0.3"
@@ -17,6 +17,7 @@ pytube = "^15.0.0"
 ffmpeg = "^1.4"
 shutils = "^0.1.0"
 youtube-transcript-api = "^0.6.1"
+pydub = "^0.25.1"
 
 
 [build-system]

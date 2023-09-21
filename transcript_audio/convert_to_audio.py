@@ -43,12 +43,17 @@ def video_to_audio(videoId: str) -> Path:
     new_file = destination / f"{videoId}.mp3"
     os.rename(out_file, new_file)
     return destination / new_file
+def remove_background_sound(audio_file: Path):
+    
+    # write code for remove background sound for audio file
+    pass
 
-
-def has_hindi_audio(videoId: str, query: str):
+def has_hindi_audio(videoId: str, query: str, background_sound: bool):
     audio_file = video_to_audio(videoId)
     audio_language = get_audio_language(audio_file)
     if audio_language.lower() in ["hi"]:
+        if background_sound:
+            audio_file = remove_background_sound(audio_file)
         store_audio(query, audio_file)
         return True
     # Removing the audio file which is not hindi from temporary storage

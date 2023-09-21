@@ -2,11 +2,12 @@ import urllib.request
 import re
 from youtube_transcript_api import YouTubeTranscriptApi
 from typing import List
-import constants as ct
-from language_videos.convert_to_audio import has_hindi_audio
-from language_videos.convert_to_audio import duration_of_video
+from constants import BASE_PATH
+from transcript_audio.convert_to_audio import has_hindi_audio
+from transcript_audio.convert_to_audio import duration_of_video
 import json
-
+from typing import Container
+from constants import HINDI_RE_PATTERN
 
 def get_video_ids(query: str) -> List[str]:
     query = query.replace(" ", "+")
@@ -32,7 +33,7 @@ def is_valid_hindi_transcript(transcript: List[dict], videoId: str) -> bool:
             if count_empty_text > 10:
                 return False
             continue
-        hindi_chars = re.findall(ct.HINDI_RE_PATTERN, transcript_text)
+        hindi_chars = re.findall(HINDI_RE_PATTERN, transcript_text)
         len_hindi_chars = len(hindi_chars)
         len_total_chars = len(transcript_text)
         duration_of_subtitles += transcript[i].get("duration")
@@ -49,24 +50,34 @@ def is_valid_hindi_transcript(transcript: List[dict], videoId: str) -> bool:
     return True
 
 
-def get_valid_videos_id(query: str) -> dict:
+def get_valid_videos_id(
+    query: str, status_container: Container, background_sound: bool
+):
     video_ids = get_video_ids(query)
     query = query.replace(" ", "_")
     transcript_results = {}
     for video in video_ids:
         try:
+            transcript_status = status_container.status(
+                f"finding transcription of {video}"
+            )
             transcript_list = YouTubeTranscriptApi.list_transcripts(video)
             transcript = transcript_list.find_manually_created_transcript(
                 language_codes=["hi"]
             )
             video_transcript = transcript.fetch()
             if is_valid_hindi_transcript(video_transcript, video) == True:
-                if has_hindi_audio(video, query):
+                transcript_status.update(
+                    label="found hindi transcription", state="complete"
+                )
+                audio_status = status_container.status(f"finding audio of {video}")
+                if has_hindi_audio(video, query, background_sound):
+                    audio_status.update(label="found hindi audio", state="complete")
                     transcript_results[video] = video_transcript
 
         except:
             continue
     if transcript_results:
-        with open(f"{ct.BASE_PATH}/transcripts/{query}.json", "w") as fp:
+        with open(f"{BASE_PATH}/transcripts/{query}.json", "w") as fp:
             json.dump(transcript_results, fp, indent=4, ensure_ascii=False)
     return transcript_results.keys()
