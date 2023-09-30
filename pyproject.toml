@@ -18,6 +18,7 @@ ffmpeg = "^1.4"
 shutils = "^0.1.0"
 youtube-transcript-api = "^0.6.1"
 pydub = "^0.25.1"
+plotly = "^5.17.0"
 
 
 [build-system]

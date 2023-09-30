@@ -465,6 +465,18 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+name = "plotly"
+version = "5.17.0"
+description = "An open-source, interactive data visualization library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+packaging = "*"
+tenacity = ">=6.2.0"
+
+[[package]]
 name = "proglog"
 version = "0.1.10"
 description = "Log and progress bar manager for console, notebooks, web..."
@@ -925,7 +937,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e7fa11a85c56f837a9b3585a48ecbfd98bb24a3b07e973572c1fad4b1bac7d04"
+content-hash = "f183af670989748a120f93b80aa99fd1f6ab0587b34b4495a49485cbc8d04e05"
 
 [metadata.files]
 altair = []
@@ -962,6 +974,7 @@ numpy = []
 packaging = []
 pandas = []
 pillow = []
+plotly = []
 proglog = []
 protobuf = []
 pyarrow = []
