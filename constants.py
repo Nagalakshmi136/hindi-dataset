@@ -1,3 +1,6 @@
+"""
+All constants used in this project
+"""
 import os
 from pathlib import Path
 

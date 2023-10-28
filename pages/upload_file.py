@@ -4,7 +4,11 @@ with list of queries and get desired data.
 """
 import streamlit as st
 
-from utils.ui_utils import get_query_data, videos_list, visualize_categories
+from yt_audio_collector.utils.ui_utils import (
+    get_query_data,
+    videos_list,
+    visualize_categories,
+)
 
 # Storing the results temporarily in between reloads using session state
 if st.session_state.get("results_from_upload") is None:
@@ -28,7 +32,6 @@ with st.form("upload_form"):
         # Traversing each query and fetching corresponding data
         for query in queries_list:
             get_query_data(query.replace(" ", "_"), "results_from_upload")
-            
 # List of categories or queries names
 if st.session_state.get("results_from_upload"):
     st.write("## List of Categories")
@@ -36,6 +39,5 @@ if st.session_state.get("results_from_upload"):
     selected_category = st.selectbox("select category: ", categories_list)
     # List of videos corresponding to each query or category
     videos_list(selected_category, "results_from_upload")
-    
-# Visualizing the no.of videos in each query or category
+# Visualizing the no.of videos in each query or category with pie chart
 visualize_categories("results_from_upload")

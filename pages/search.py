@@ -3,7 +3,11 @@ Search page i.e. you can search desired data by giving query
 """
 import streamlit as st
 
-from utils.ui_utils import get_query_data, videos_list, visualize_categories
+from yt_audio_collector.utils.ui_utils import (
+    get_query_data,
+    videos_list,
+    visualize_categories,
+)
 
 # Storing the results temporarily in between reloads using session state
 if st.session_state.get("results_from_search") is None:
@@ -13,7 +17,8 @@ if st.session_state.get("query") is None:
 if st.session_state.get("background_sound") is None:
     st.session_state.background_sound = True
 
-# Load and process data from query only when submit button clicks which achieved by form
+# Load and process data from query only when 
+# submit button clicks which achieved by form
 with st.form("search_form"):
     query = st.text_input("Enter your search", placeholder="search...").replace(
         " ", "_"
@@ -27,8 +32,7 @@ with st.form("search_form"):
     if is_submit and query is not None:
         st.session_state.query = query
         get_query_data(query, "results_from_search")
-        
 # List of video satisfies the given query
 videos_list(st.session_state.query, "results_from_search")
-# Visualizing the no.of videos in each query or category
+# Visualizing the no.of videos in each query or category with pie chart
 visualize_categories("results_from_search")
