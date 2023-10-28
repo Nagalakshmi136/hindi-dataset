@@ -1,11 +1,11 @@
-yt\_audio\_collector.system\_2 package
-======================================
+system 2:
+=========
 
 Submodules
 ----------
 
-yt\_audio\_collector.system\_2.preprocess\_audio module
---------------------------------------------------------
+Preprocess Audio module
+------------------------
 
 .. automodule:: yt_audio_collector.system_2.preprocess_audio
    :members:

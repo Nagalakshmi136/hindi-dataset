@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>yt_audio_collector.transcript_audio package &mdash; Hindi Dataset  documentation</title>
+  <title>Transcript Audio package &mdash; Hindi Dataset  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="yt_audio_collector.utils package" href="yt_audio_collector.utils.html" />
-    <link rel="prev" title="yt_audio_collector.system_2 package" href="yt_audio_collector.system_2.html" /> 
+    <link rel="next" title="utils package" href="yt_audio_collector.utils.html" />
+    <link rel="prev" title="system 2:" href="yt_audio_collector.system_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,15 +47,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="yt_audio_collector.html">YouTube Audio Collector</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="yt_audio_collector.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="yt_audio_collector.system_2.html">yt_audio_collector.system_2 package</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">yt_audio_collector.transcript_audio package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="yt_audio_collector.system_2.html">system 2:</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Transcript Audio package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-yt_audio_collector.transcript_audio.convert_to_audio">yt_audio_collector.transcript_audio.convert_to_audio module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-yt_audio_collector.transcript_audio.fetch_youtube_data">yt_audio_collector.transcript_audio.fetch_youtube_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-yt_audio_collector.transcript_audio.video_to_audio">Video To Audio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-yt_audio_collector.transcript_audio.fetch_youtube_data">Fetch YouTube Data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-yt_audio_collector.transcript_audio">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="yt_audio_collector.utils.html">yt_audio_collector.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yt_audio_collector.utils.html">utils package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="yt_audio_collector.html#module-yt_audio_collector">Module contents</a></li>
@@ -78,7 +78,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="yt_audio_collector.html">YouTube Audio Collector</a></li>
-      <li class="breadcrumb-item active">yt_audio_collector.transcript_audio package</li>
+      <li class="breadcrumb-item active">Transcript Audio package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/user/yt_audio_collector.transcript_audio.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,18 +88,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="yt-audio-collector-transcript-audio-package">
-<h1>yt_audio_collector.transcript_audio package<a class="headerlink" href="#yt-audio-collector-transcript-audio-package" title="Link to this heading"></a></h1>
+  <section id="transcript-audio-package">
+<h1>Transcript Audio package<a class="headerlink" href="#transcript-audio-package" title="Link to this heading"></a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="module-yt_audio_collector.transcript_audio.convert_to_audio">
-<span id="yt-audio-collector-transcript-audio-convert-to-audio-module"></span><h2>yt_audio_collector.transcript_audio.convert_to_audio module<a class="headerlink" href="#module-yt_audio_collector.transcript_audio.convert_to_audio" title="Link to this heading"></a></h2>
+<section id="module-yt_audio_collector.transcript_audio.video_to_audio">
+<span id="video-to-audio-module"></span><h2>Video To Audio module<a class="headerlink" href="#module-yt_audio_collector.transcript_audio.video_to_audio" title="Link to this heading"></a></h2>
 <p>This module contains functions to convert YouTube videos to audio files, detect the language of the audio,
 store the audio files, and check if the audio is in Hindi language.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.convert_to_audio.convert_video_to_audio">
-<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.convert_to_audio.</span></span><span class="sig-name descname"><span class="pre">convert_video_to_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/convert_to_audio.html#convert_video_to_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.convert_to_audio.convert_video_to_audio" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.video_to_audio.convert_video_to_audio">
+<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.video_to_audio.</span></span><span class="sig-name descname"><span class="pre">convert_video_to_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/video_to_audio.html#convert_video_to_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.video_to_audio.convert_video_to_audio" title="Link to this definition"></a></dt>
 <dd><p>Converts a video to an audio file.</p>
 <section id="parameters">
 <h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
@@ -118,8 +118,8 @@ store the audio files, and check if the audio is in Hindi language.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.convert_to_audio.duration_of_video">
-<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.convert_to_audio.</span></span><span class="sig-name descname"><span class="pre">duration_of_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/convert_to_audio.html#duration_of_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.convert_to_audio.duration_of_video" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.video_to_audio.duration_of_video">
+<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.video_to_audio.</span></span><span class="sig-name descname"><span class="pre">duration_of_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/video_to_audio.html#duration_of_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.video_to_audio.duration_of_video" title="Link to this definition"></a></dt>
 <dd><p>Gets the duration of the video in seconds using the pytube library.</p>
 <section id="id1">
 <h3>Parameters:<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
@@ -138,8 +138,8 @@ store the audio files, and check if the audio is in Hindi language.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.convert_to_audio.get_audio_language">
-<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.convert_to_audio.</span></span><span class="sig-name descname"><span class="pre">get_audio_language</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/convert_to_audio.html#get_audio_language"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.convert_to_audio.get_audio_language" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.video_to_audio.get_audio_language">
+<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.video_to_audio.</span></span><span class="sig-name descname"><span class="pre">get_audio_language</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/video_to_audio.html#get_audio_language"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.video_to_audio.get_audio_language" title="Link to this definition"></a></dt>
 <dd><p>Detects the language of an audio using the whisper model.</p>
 <section id="id3">
 <h3>Parameters:<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
@@ -158,8 +158,8 @@ store the audio files, and check if the audio is in Hindi language.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.convert_to_audio.has_hindi_audio">
-<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.convert_to_audio.</span></span><span class="sig-name descname"><span class="pre">has_hindi_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/convert_to_audio.html#has_hindi_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.convert_to_audio.has_hindi_audio" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.video_to_audio.has_hindi_audio">
+<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.video_to_audio.</span></span><span class="sig-name descname"><span class="pre">has_hindi_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/video_to_audio.html#has_hindi_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.video_to_audio.has_hindi_audio" title="Link to this definition"></a></dt>
 <dd><p>Converts the video to an audio file, determines its audio language,
 stores the audio file if it’s in Hindi language, and returns True.
 Otherwise, removes the audio file and returns False.</p>
@@ -182,8 +182,8 @@ Otherwise, removes the audio file and returns False.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.convert_to_audio.store_audio">
-<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.convert_to_audio.</span></span><span class="sig-name descname"><span class="pre">store_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/convert_to_audio.html#store_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.convert_to_audio.store_audio" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.video_to_audio.store_audio">
+<span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.video_to_audio.</span></span><span class="sig-name descname"><span class="pre">store_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/video_to_audio.html#store_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.video_to_audio.store_audio" title="Link to this definition"></a></dt>
 <dd><p>Stores the audio file in a separate audio folder.</p>
 <section id="id7">
 <h3>Parameters:<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
@@ -198,7 +198,7 @@ Otherwise, removes the audio file and returns False.</p>
 
 </section>
 <section id="module-yt_audio_collector.transcript_audio.fetch_youtube_data">
-<span id="yt-audio-collector-transcript-audio-fetch-youtube-data-module"></span><h2>yt_audio_collector.transcript_audio.fetch_youtube_data module<a class="headerlink" href="#module-yt_audio_collector.transcript_audio.fetch_youtube_data" title="Link to this heading"></a></h2>
+<span id="fetch-youtube-data-module"></span><h2>Fetch YouTube Data module<a class="headerlink" href="#module-yt_audio_collector.transcript_audio.fetch_youtube_data" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="yt_audio_collector.transcript_audio.fetch_youtube_data.get_valid_video_ids">
 <span class="sig-prename descclassname"><span class="pre">yt_audio_collector.transcript_audio.fetch_youtube_data.</span></span><span class="sig-name descname"><span class="pre">get_valid_video_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_container</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Container</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/yt_audio_collector/transcript_audio/fetch_youtube_data.html#get_valid_video_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#yt_audio_collector.transcript_audio.fetch_youtube_data.get_valid_video_ids" title="Link to this definition"></a></dt>
@@ -275,8 +275,8 @@ Otherwise, removes the audio file and returns False.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="yt_audio_collector.system_2.html" class="btn btn-neutral float-left" title="yt_audio_collector.system_2 package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="yt_audio_collector.utils.html" class="btn btn-neutral float-right" title="yt_audio_collector.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="yt_audio_collector.system_2.html" class="btn btn-neutral float-left" title="system 2:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="yt_audio_collector.utils.html" class="btn btn-neutral float-right" title="utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

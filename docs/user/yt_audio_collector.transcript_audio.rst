@@ -1,19 +1,19 @@
-yt\_audio\_collector.transcript\_audio package
-==============================================
+Transcript Audio package
+=========================
 
 Submodules
 ----------
 
-yt\_audio\_collector.transcript\_audio.convert\_to\_audio module
-----------------------------------------------------------------
+Video To Audio module
+-----------------------
 
-.. automodule:: yt_audio_collector.transcript_audio.convert_to_audio
+.. automodule:: yt_audio_collector.transcript_audio.video_to_audio
    :members:
    :undoc-members:
    :show-inheritance:
 
-yt\_audio\_collector.transcript\_audio.fetch\_youtube\_data module
-------------------------------------------------------------------
+Fetch YouTube Data module
+--------------------------
 
 .. automodule:: yt_audio_collector.transcript_audio.fetch_youtube_data
    :members:

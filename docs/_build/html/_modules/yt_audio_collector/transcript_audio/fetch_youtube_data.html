@@ -39,9 +39,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">hindi_dataset</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/install.html">Installation of hindi-dataset:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/yt_audio_collector.html">YouTube Audio Collector</a></li>
 </ul>
 
         </div>
@@ -77,12 +78,12 @@
 <span class="kn">from</span> <span class="nn">youtube_transcript_api</span> <span class="kn">import</span> <span class="n">YouTubeTranscriptApi</span>
 
 <span class="kn">from</span> <span class="nn">constants</span> <span class="kn">import</span> <span class="n">BASE_PATH</span><span class="p">,</span> <span class="n">HINDI_RE_PATTERN</span>
-<span class="kn">from</span> <span class="nn">yt_audio_collector.transcript_audio.convert_to_audio</span> <span class="kn">import</span> <span class="n">duration_of_video</span><span class="p">,</span> <span class="n">has_hindi_audio</span>
+<span class="kn">from</span> <span class="nn">yt_audio_collector.transcript_audio.video_to_audio</span> <span class="kn">import</span> <span class="n">duration_of_video</span><span class="p">,</span> <span class="n">has_hindi_audio</span>
 <span class="kn">from</span> <span class="nn">yt_audio_collector.utils.file_utils</span> <span class="kn">import</span> <span class="n">create_dir</span>
 
 
 <div class="viewcode-block" id="get_video_ids">
-<a class="viewcode-back" href="../../../yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.get_video_ids">[docs]</a>
+<a class="viewcode-back" href="../../../user/yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.get_video_ids">[docs]</a>
 <span class="k">def</span> <span class="nf">get_video_ids</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Fetches all video ids corresponding to the given query from YouTube.</span>
@@ -121,7 +122,7 @@
 
 
 <div class="viewcode-block" id="is_valid_hindi_transcript">
-<a class="viewcode-back" href="../../../yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.is_valid_hindi_transcript">[docs]</a>
+<a class="viewcode-back" href="../../../user/yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.is_valid_hindi_transcript">[docs]</a>
 <span class="k">def</span> <span class="nf">is_valid_hindi_transcript</span><span class="p">(</span><span class="n">transcript</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">video_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Checks if the given transcript is valid:</span>
@@ -178,7 +179,7 @@
 
 
 <div class="viewcode-block" id="get_valid_video_ids">
-<a class="viewcode-back" href="../../../yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.get_valid_video_ids">[docs]</a>
+<a class="viewcode-back" href="../../../user/yt_audio_collector.transcript_audio.html#yt_audio_collector.transcript_audio.fetch_youtube_data.get_valid_video_ids">[docs]</a>
 <span class="k">def</span> <span class="nf">get_valid_video_ids</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">status_container</span><span class="p">:</span> <span class="n">Container</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds video ids which have Hindi audio and Hindi transcript from YouTube.</span>
