@@ -6,7 +6,7 @@ from typing import Container, List
 from youtube_transcript_api import YouTubeTranscriptApi
 
 from constants import BASE_PATH, HINDI_RE_PATTERN
-from yt_audio_collector.transcript_audio.convert_to_audio import duration_of_video, has_hindi_audio
+from yt_audio_collector.transcript_audio.video_to_audio import duration_of_video, has_hindi_audio
 from yt_audio_collector.utils.file_utils import create_dir
 
 
