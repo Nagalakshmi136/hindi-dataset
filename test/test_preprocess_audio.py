@@ -2,7 +2,7 @@ import os
 import json
 import pytest
 from pathlib import Path
-from yt_audio_collector.system_2.chunk_audio import PreProcessAudio
+from yt_audio_collector.system_2.preprocess_audio import PreProcessAudio
 
 
 @pytest.fixture

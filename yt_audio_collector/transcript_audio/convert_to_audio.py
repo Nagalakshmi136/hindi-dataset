@@ -8,8 +8,6 @@ from pathlib import Path
 
 import whisper
 from pytube import YouTube
-from langdetect import detect
-
 
 from constants import BASE_PATH, BASE_URL
 

@@ -21,12 +21,12 @@ BASE_PATH = Path(os.getcwd()).parent
 class PreProcessAudio:
     """
     This class is responsible for preprocessing the audio for speech recognition model.
-    It extracts vocals from audio files, 
+    It extracts vocals from audio files,
     resamples the audio, and divides the audio into chunks based on transcriptions.
     """
 
     def __init__(
-        self, source_path: Path, destination_path: Path, background_sound: bool
+        self, source_path: str, destination_path: str, background_sound: bool = False
     ) -> None:
         """
         Initializes the PreProcessAudio class.
@@ -44,22 +44,22 @@ class PreProcessAudio:
         self.width_rate = 2
         self.channels = 1
         self.background_sound = background_sound
-        self.destination_path = destination_path
+        self.destination_path = Path(destination_path)
         self.temp = create_dir(BASE_PATH / "temp")
-        self.source_path = source_path
+        self.source_path = Path(source_path)
 
     def get_file_name(self, total_file_path: Path) -> str:
-        """Finds the file name without extension from absolute file path 
+        """Finds the file name without extension from absolute file path
 
         Parameters:
-        ----------- 
+        -----------
         total_file_path: `Path`
             The absolute path of the file
 
         Return:
-        -------                 
-        str         
-            File name without extension  
+        -------
+        str
+            File name without extension
         """
         base_name = os.path.basename(total_file_path)
         return os.path.splitext(base_name)[0]
@@ -107,7 +107,7 @@ class PreProcessAudio:
             The category name in the audio folder.
         """
         # Make a JSON file which contains all the processed audio ids
-        # which helps to track the processed audio files in one place and 
+        # which helps to track the processed audio files in one place and
         # avoid processing of the same audio repeatedly.
         processed_audio_file_path = self.destination_path / "processed_audios.json"
 
@@ -178,5 +178,5 @@ class PreProcessAudio:
 
 
 PreProcessAudio(
-    BASE_PATH / "audio", BASE_PATH / "processed_audio", False
+    f"{BASE_PATH}/audio", f"{BASE_PATH}/processed_audio", False
 ).preprocess_audio()
